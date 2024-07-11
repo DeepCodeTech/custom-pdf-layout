@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Excel and Images</title>
+    <style>
+        .upload-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .upload-form {
+            width: 50%;
+        }
+        .image-preview-container {
+            width: 40%;
+            padding-left: 20px;
+        }
+        .image-preview {
+            max-width: 100%;
+            max-height: 200px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Excel File and Images</h1>
+    <div class="upload-container">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="excelFile">Excel File:</label>
+            <input type="file" name="excelFile" id="excelFile" accept=".xlsx,.xls" required>
+            <br><br>
+            <label for="imageFile1">Image 1:</label>
+            <input type="file" name="imageFile1" id="imageFile1" accept="image/*">
+            <br><br>
+            <label for="imageFile2">Image 2:</label>
+            <input type="file" name="imageFile2" id="imageFile2" accept="image/*">
+            <br><br>
+            <label for="imageFile3">Image 3:</label>
+            <input type="file" name="imageFile3" id="imageFile3" accept="image/*">
+            <br><br>
+            <label for="imageFile4">Image 4:</label>
+            <input type="file" name="imageFile4" id="imageFile4" accept="image/*">
+            <br><br>
+            <label for="imageFile5">Image 5:</label>
+            <input type="file" name="imageFile5" id="imageFile5" accept="image/*">
+            <br><br>
+            <label for="designerName">Designer's Name:</label>
+            <select name="designerName" id="designerName">
+                <option value="Designer 1">Designer 1</option>
+                <option value="Designer 2">Designer 2</option>
+                <option value="Designer 3">Designer 3</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br><br>
+            <!-- <label for="budgetCost">Budget</label>
+            <input type="text" name="budgetCost" id="budgetCost"> -->
+            <label for="roomType">Room Type:</label>
+            <input type="text" name="roomType" id="roomType">
+            <!-- <label for="furnitureQt">Furniture Included:</label>
+            <input type="text" name="furnitureQt" id="furnitureQt"> -->
+            <br><br>
+            <label for="image360File">Image 360</label>
+            <input type="file" name="image360File" id="image360File" accept="image/*">
+            <br><br>
+            <label for="link360">360 image link:</label>
+            <input type="text" name="link360" id="link360">
+            <br><br>
+            <label for="imageLayout1">Layout 1</label>
+            <input type="file" name="imageLayout1" id="imageLayout1" accept="image/*">
+            <br><br>
+            <label for="imageLayout2">Layout 2</label>
+            <input type="file" name="imageLayout2" id="imageLayout2" accept="image/*">
+            <br><br>
+            <label for="imageLayout3">Layout 3</label>
+            <input type="file" name="imageLayout3" id="imageLayout3" accept="image/*">
+            <br><br>
+            <label for="imageLayout4">Layout 4</label>
+            <input type="file" name="imageLayout4" id="imageLayout4" accept="image/*">
+            <br><br>
+            <button type="submit">Upload and Convert</button>
+        </form>
+        <div class="image-preview-container" id="imagePreviewContainer">
+            <h2>Image Previews</h2>
+        </div>
+    </div>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadForm = document.getElementById('uploadForm');
+            const imageFile1 = document.getElementById('imageFile1');
+            const imageFile2 = document.getElementById('imageFile2');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+
+            // Function to handle file input change and update image preview
+            function handleFileInputChange(fileInput, previewContainer) {
+                fileInput.addEventListener('change', function() {
+                    const file = this.files[0];
+
+                    if (file) {
+                        const reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            const image = document.createElement('img');
+                            image.src = e.target.result;
+                            image.classList.add('image-preview');
+                            previewContainer.appendChild(image);
+                        };
+
+                      reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // Call handleFileInputChange for each image input
+            handleFileInputChange(imageFile1, imagePreviewContainer);
+            handleFileInputChange(imageFile2, imagePreviewContainer);
+        });
+    </script> -->
+</body>
+</html>
